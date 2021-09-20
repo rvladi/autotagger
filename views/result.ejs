@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Image Auto-Tagger</title>
+        <link href="/public/css/autotagger.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col1 mt1">
+                    <h4>Image Auto-Tagger</h4>
+                    <br/>
+                    <form action="/" method="GET">
+                        <button type="submit" class="btn btn-primary">Select new images</button>
+                    </form>
+                </div>
+            </div>
+            <br/>
+            <hr/>
+            <div class="row">
+                <div class="col2">
+                    <div class="preview-images2">
+                        <% for (const [i, image] of images.entries()) { %>
+                            <div class="content">
+                                <img src="<%= image.src %>">
+                                <div>
+                                    <h4>Tags</h4>
+                                    <br/>
+                                    <span id="tags<%= i %>">
+                                    <% for (const tag of image.tags) { %>
+                                        <p><%= tag %></p>
+                                    <% } %>
+                                    </span>
+                                </div>
+                            </div>
+                            <br/><br/>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>Image Auto-Tagger</title>
+        <link href="public/css/autotagger.css" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="public/js/init.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col1 mt1">
+                    <h4>Image Auto-Tagger</h4>
+                    <br/>
+                    <form action="/upload" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="input-multi-files">Select between 1 and 4 images in JPEG or PNG format.</label>
+                            <input type="file" name="multi-files" multiple id="input-multi-files"
+                                   class="form-control-file border"/>
+                        </div>
+                        <br/>
+                        <button type="submit" class="btn btn-primary">Upload image(s) for auto-tagging</button>
+                    </form>
+                </div>
+            </div>
+            <br/>
+            <hr/>
+            <span class="err"><%= err %></span>
+            <div class="row">
+                <div class="col2">
+                    <div class="preview-images"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
